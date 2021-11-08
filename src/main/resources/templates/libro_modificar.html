@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous" />
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#"><img alt="" src=""></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/">Libreria</a>
+                  </li>
+                  <li class="nav-item">
+                 
+                     <a class="nav-link active" aria-current="page" th:href="@{/autor}">Autores</a>
+                  </li>
+                  <li class="nav-item">
+                   <a class="nav-link active" aria-current="page" th:href="@{/editorial}">Editoriales</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" th:href="@{/libro}">Libros</a>
+                  </li>
+                  <li class="nav-item">
+                  	<a class="nav-link" href="#">Registro</a>
+                  </li>
+                  
+              </div>
+            </div>
+          </nav>
+
+
+    <form th:action="@{/libro/modificar/__${libro.id}__}" method="POST">
+        <label for="id">Id</label>
+        <input type="hidden" th:value="${libro.id}" name="id">
+        
+      
+        
+        <label for="isbn">Isbn</label>
+        <input type="number"  th:value="${libro.isbn}" name="isbn"> <br>
+        
+        <label for="titulo">Titulo</label>
+        <input type="text"  th:value="${libro.titulo}" name="titulo"><br>
+        
+        <label for="anio">Año</label>
+        <input type="number"  th:value="${libro.anio}" name="anio"><br>
+        
+        <label for="ej">Ejemplares</label>
+        <input type="number" th:value="${libro.ejemplares}" name="ej"><br>
+        
+        <label for="ejp">Ejemplares Prestados</label>
+        <input type="number" th:value="${libro.ejemplaresPrestados}" name="ejp"><br>
+        
+        <label for="autor">Autor</label>
+        <input type="text" th:value="${libro.autor}" name="autor"><br>
+        
+        <label for="editorial">Editorial</label>
+        <input type="text" th:value="${libro.editorial}" name="editorial"><br> 
+        
+        <button type="submit">Guardar</button>
+       
+    </form>
+
+
+
+<a th:href="@{/}">Inicio</a> 
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html>

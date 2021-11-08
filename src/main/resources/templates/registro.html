@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+<meta charset="ISO-8859-1">
+<title>Autor</title>
+
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+	crossorigin="anonymous">
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="#"><img alt="" src=""></a>
+			<button class="navbar-toggler" type="button"
+				data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+				aria-controls="navbarSupportedContent" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					<li class="nav-item"><a class="nav-link active"
+						aria-current="page" href="/">Libreria</a></li>
+					<li class="nav-item"><a class="nav-link active"
+						aria-current="page" th:href="@{/autor}">Autores</a></li>
+					<li class="nav-item"><a class="nav-link active"
+						aria-current="page" th:href="@{/editorial}">Editoriales</a></li>
+					<li class="nav-item"><a class="nav-link" th:href="@{/libro}">Libros</a>
+					</li>
+					<li class="nav-item"><a class="nav-link"
+						th:href="@{/registro}">Registro</a></li>
+					<li class="nav-item"><a class="nav-link" th:href="@{/login}">Login</a>
+					</li>
+			</div>
+		</div>
+	</nav>
+
+	<form action="/registrar" method="post">
+		<div class="mb-3">
+			<label for="nombre" class="form-label">Nombre</label> <input type="text" class="form-control"
+				id="formGroupExampleInput" placeholder="Escriba su nombre " name="nombre">
+		</div>
+		<div class="mb-3">
+			<label for="apellido" class="form-label">Apellido</label> <input type="text" class="form-control"
+				id="formGroupExampleInput2" placeholder="Escriba su apellido" name="apellido">
+		</div>
+		<div class="mb-3">
+			<label for="email" class="form-label">E-mail</label> <input type="email" class="form-control"
+				id="formGroupExampleInput2" placeholder="Escriba su e-mail" name="email">
+		</div>
+		<div class="mb-3">
+			<label for="clave" class="form-label">Clave</label> <input type="password" class="form-control"
+				id="formGroupExampleInput2" placeholder="Ingrese su clave " name="clave">
+		</div>
+		<div class="mb-3">
+			<label for="repetir" class="form-label">Repetir Clave</label> <input type="password" class="form-control"
+				id="formGroupExampleInput2" placeholder="Repita su clave " name="repetir">
+		</div>
+		
+		<button type="submit">Registrarse</button>
+	</form>
+
+	<a th:href="@{/}">Volver</a>
+	<br>
+
+
+	</div>
+
+
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+		crossorigin="anonymous"></script>
+
+</body>
+</html>

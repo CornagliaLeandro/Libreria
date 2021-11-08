@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: root1234
+    url: jdbc:mysql://localhost:3306/libreria?useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+  jpa:
+    database: mysql
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    
+server:
+ port: 8082
